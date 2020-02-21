@@ -1,0 +1,111 @@
+{% extends 'organization/organization_base.html'%}
+{% load static %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'organization/css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'organization/css/bootstrap.min.css' %}">
+	<title>Inventory</title>
+{% block inventory %}
+<body>
+	<br>
+	<legend class="border-bottom mb-20" align="center">
+			<h2><i><b>INVENTORIES</b></i></h2>
+	</legend>
+	<div class="container" align="center">
+		<div class="button-group border-bottom mb-20" style="padding: 15px;">
+		<a href="{% url 'display_laptops' %}" class="btn btn-primary btn-md" role="button">Laptops</a>
+		<a href="{% url 'add_laptop' %}" class="btn btn-warning btn-sm" role="button">+</a>
+
+		&emsp;
+		<a href="{% url 'display_desktops' %}" class="btn btn-primary btn-md" role="button">Desktops</a>
+		<a href="{% url 'add_desktop' %}" class="btn btn-warning btn-sm" role="button">+</a>
+
+		&emsp;
+		<a href="{% url 'display_cupboards' %}" class="btn btn-primary btn-md" role="button">Cupboards</a>
+		<a href="{% url 'add_cupboard' %}" class="btn btn-warning btn-sm" role="button">+</a>
+
+		&emsp;
+		<a href="{% url 'display_tables' %}" class="btn btn-primary btn-md" role="button">Tables</a>
+		<a href="{% url 'add_table' %}" class="btn btn-warning btn-sm" role="button">+</a>
+
+		&emsp;
+		<a href="{% url 'display_chairs' %}" class="btn btn-primary btn-md" role="button">Chairs</a>
+		<a href="{% url 'add_chair' %}" class="btn btn-warning btn-sm" role="button">+</a>
+
+		&emsp;
+		<a href="{% url 'display_beds' %}" class="btn btn-primary btn-md" role="button">Beds</a>
+		<a href="{% url 'add_bed' %}" class="btn btn-warning btn-sm" role="button">+</a>
+		<br>
+		</div>
+	<!-- <br> -->&nbsp;
+	<legend class="border-bottom mb-20" align="center">
+			<h3><i><b>{{header}}&nbsp;<button type="button" class="btn btn-secondary" style="border-radius: 50%;">{{num}}</button></b></i></h3>
+	</legend>
+	<!-- <label for="search_roonno" ><b>Search</b></label> -->
+	<input type="integer" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+		<br>
+	&emsp;
+	<table class="table table-hover">
+		<thead >
+			<tr>
+				<th>Serial no</th>
+				<th>Id</th>
+				<th>Model</th>
+				<th>Room no</th>
+				<th>Hostel</th>
+				<th>Allocation date</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in items %}
+			<tr>
+				<td>{{item.pk}}</td>
+				<td>{{item.i_id}}</td>
+				<td>{{item.model}}</td>
+				<td>{{item.room_no}}</td>
+				<td>{{item.hostel}}</td>
+				<td>{{item.allocation_date}}</td>
+
+				{% if header == 'Laptops' %}
+				<td>
+					<a href="{% url 'edit_laptop' item.pk %}" class="btn btn-info btn-sm" role="button">Edit</a>
+					<a href="{% url 'delete_laptop' item.pk %}" class="btn btn-danger btn-sm" role="button">x</a>
+				</td>
+				{% elif header == 'Desktops' %}
+				<td>
+					<a href="{% url 'edit_desktop' item.pk %}" class="btn btn-info btn-sm" role="button">Edit</a>
+					<a href="{% url 'delete_desktop' item.pk %}" class="btn btn-danger btn-sm" role="button">x</a>
+				</td>
+				{% elif header == 'Cupboards' %}
+				<td>
+					<a href="{% url 'edit_cupboard' item.pk %}" class="btn btn-info btn-sm" role="button">Edit</a>
+					<a href="{% url 'delete_cupboard' item.pk %}" class="btn btn-danger btn-sm" role="button">x</a>
+				</td>
+				{% elif header == 'Chairs' %}
+				<td>
+					<a href="{% url 'edit_chair' item.pk %}" class="btn btn-info btn-sm" role="button">Edit</a>
+					<a href="{% url 'delete_chair' item.pk %}" class="btn btn-danger btn-sm" role="button">x</a>
+				</td>
+				{% elif header == 'Tables' %}
+				<td>
+					<a href="{% url 'edit_table' item.pk %}" class="btn btn-info btn-sm" role="button">Edit</a>
+					<a href="{% url 'delete_table' item.pk %}" class="btn btn-danger btn-sm" role="button">x</a>
+				</td>
+				{% else %}
+				<td>
+					<a href="{% url 'edit_bed' item.pk %}" class="btn btn-info btn-sm" role="button">Edit</a>
+					<a href="{% url 'delete_bed' item.pk %}" class="btn btn-danger btn-sm" role="button">x</a>
+				</td>
+				{% endif %}
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<a href="{% url 'export_as_csv' %}" class="btn btn-success btn-md" role="button">Export to CSV</a>
+	<a href="{% url 'export_as_excel' %}" class="btn btn-success btn-md" role="button">Export to EXCEL</a>
+	<a href="{% url 'export_as_json' %}" class="btn btn-success btn-md" role="button">Export to JSON</a>
+	</div>
+	<br>
+</body>
+{% endblock inventory%}

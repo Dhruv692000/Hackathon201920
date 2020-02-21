@@ -1,0 +1,30 @@
+{% extends 'organization/base.html' %}
+{% block leave_form %}
+
+	<div class="container"><br>
+
+		<!-- <div align="center"> -->
+		<form method="POST">
+			{% csrf_token %}
+
+			{% for field in form %}
+
+				<div class="form-group row">
+					<label for="id_{{field.name}}" class="col-2 col-form-label">{{field.label}}</label>
+
+					<div class="col-10">
+						{{field}}
+					</div>
+
+				</div>
+
+			{% endfor %}
+
+			<button type="submit" class="btn btn-primary" name="button">Apply for leave</button>
+
+		</form>
+		</div>
+		<br>
+	</div>
+
+{% endblock leave_form %}

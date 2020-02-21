@@ -1,0 +1,64 @@
+{% extends 'organization/organization_base.html' %}
+{% block dashboard %}
+<br>
+	<legend class="border-bottom mb-4" align="center">
+			<h2><i><b>DashBoard</b></i></h2>
+	</legend>
+	<div class="container-fluid">
+		<div class="card-deck">
+			<div class="card text-center" style="border : 1px solid black">
+				<img src="https://cdn.pixabay.com/photo/2017/01/24/18/02/smart-home-2005993__340.png" 
+				alt="manage students">
+				<div class="card-body" style="background-color: rgb(214, 211, 211);">
+					<a href="{% url 'inventory' %}" class="stretched-link btn btn-outline-secondary">Inventory</a>
+
+				</div>
+			</div>
+
+			<div class="card text-center" style="border : 1px solid black">
+				<img src="https://cdn.pixabay.com/photo/2015/10/30/10/						04/share-price-1013627__340.jpg" alt="Merits">
+
+				<div class="card-body" style="background-color: rgb(214, 211, 211);">
+					<a href="{% url 'setmerit' %}" class="stretched-link btn btn-outline-secondary">Set Merit</a>	
+				</div>
+			</div>
+
+			<div class="card text-center" style="border : 1px solid black">
+				<img src="https://cdn.pixabay.com/photo/2014/11/14/03/38/news-530220__340.jpg" alt="Notifications">
+
+				<div class="card-body" style="background-color: rgb(214, 211, 211);">
+					<a href="{% url 'notification' %}" class="stretched-link btn btn-outline-secondary">Set Notifications</a>	
+				</div>
+			</div>
+
+			<div class="card text-center" style="border : 1px solid black">
+				<img  src="https://cdn.pixabay.com/photo/2017/12/11/12/52/whatsapp-3012138__340.png" alt="Details">
+
+				<div class="card-body" style="background-color: rgb(214, 211, 211);">
+					<a href="#" class="stretched-link btn btn-outline-secondary">
+						Manage Students
+					</a>	
+				</div>
+			</div>
+
+			<div class="card text-center" style="border : 1px solid black">
+				<img src="https://cdn.pixabay.com/photo/2017/01/24/18/02/smart-home-2005993__340.png"  alt="Rooms">
+
+				<div class="card-body" style="background-color: rgb(214, 211, 211);">
+					<a href="#" class="stretched-link btn btn-outline-secondary">Manage Staff</a>
+				</div>
+			</div>
+
+			<div class="card text-center" style="border : 1px solid black">
+				<img  src="https://cdn.pixabay.com/photo/2017/12/11/12/52/whatsapp-3012138__340.png" alt="Details">
+
+				<div class="card-body" style="background-color: rgb(214, 211, 211);">
+					<a href="#" class="stretched-link btn btn-outline-secondary">
+						Manage Rooms
+					</a>	
+				</div>
+			</div>
+		</div>			
+	</div>
+<br>
+{% endblock dashboard %}

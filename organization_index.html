@@ -1,0 +1,173 @@
+{% extends 'organization/organization_base.html' %}
+{% block content %}
+<!-- <script async src="//jsfiddle.net/hajtwbot/embed/"></script> -->
+<style>
+    .blinking{
+    animation:blinkingText 0.9s infinite;
+    }
+    @keyframes blinkingText{
+        0%{     color: #fff;    }
+        55%{    color: transparent; }
+        /*50%{    color: transparent; }*/
+        99%{    color: transparent;  }
+        100%{   color: #fff;    }
+    }          
+
+    .carousel-inner img {
+            width: 100%;
+            height: 100%;
+            }
+          div .scroll{
+            overflow-y: scroll;
+            width: 100%;
+            height: 500px;
+          }
+          ::-webkit-scrollbar {
+            width: 10px;
+          }
+
+          ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+          }
+          
+          ::-webkit-scrollbar-thumb {
+            background: #888; 
+          }
+
+          ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+          }
+  
+</style>
+<script type="text/javascript">
+  var i = 0;
+  var txt = "We make sure to provide a range of Amenities to make you feel like you're home!"; /* The text */
+  var speed = 45; /* The speed/duration of the effect in milliseconds */
+
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("demos").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  
+</script>
+    <body style="font-family: serif;" onload="typeWriter()">
+
+      <div class="header" 
+        style=" /*padding: 60px;*/
+        height: 500px;
+        text-align: center;
+        /*background-image: url(https://cdn.pixabay.com/photo/2019/12/26/12/21/fog-4720316__340.jpg);*/
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: black;
+        border-bottom: 2px solid black;">
+          <iframe width="1356" height="498" src="https://www.youtube.com/embed/Z8A1TMxR1_I?autoplay=1">
+          </iframe>
+
+        </div>
+        <br>
+        <!----------------------------------Navigation bar------------------------------------->
+        <div style="text-align: center;">
+            <!-- <br> -->
+            <label style="font-size: xx-large;color: black ;font-family: 'Sofia';font-size: 32px;" id="demos">
+                <!-- <b> --><!-- </b> -->
+            </label>
+            <br><br>
+            <div style="border: 1px solid black;"></div>
+        </div>
+
+        <div style="display: flex;flex-wrap: wrap;">
+        <div style=" flex: 75%;background-color: white;padding: 15px;">
+            <h3 style="text-align: center;font-family: 'Sofia';"><b>About Us</b></h3>
+            <div class="container">
+                <!-- <br> -->
+                <div style="font-size: 18px; text-align: justify;">
+                    A.V. Parekh Institute is an education institution that has been rapidly 
+                    improving for the past few years.Amrutlal Virpal Parekh Technical Institute abbreviated as AVPTI was found out in the year of 1948 by the help of a generous donor of that era known asSheth Amrutlal Virpal Parekh. He donated INR - 1,05,0001 in the currency of that time, with the help of which Wireless Telegraphy course was first to start in this campus & in the country! It is worth to mention that to fulfill the vision of Sheth Shree A.V. Parekh, the Principal of D.H. Arts & Science College in year of 1948, Shree R.K. Yagnik played a vital role & made it a success.
+                </div>
+                <br>
+            </div>
+            <div id="demo" class="carousel slide" data-ride="carousel" style="width: 100%;">
+
+                <ul class="carousel-indicators">
+                  <li data-target="#demo" data-slide-to="0" class="active"></li>
+                  <li data-target="#demo" data-slide-to="1"></li>
+                  <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+                
+                <div class="carousel-inner" align="center">
+                  <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80.jpg" alt="def1" 
+                    style="width: 100%;height: 100%;">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80.jpg" alt="def2" 
+                    style="width: 100%;height: 100%;">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80.jpg" alt="def3" 
+                    style="width: 100%;height: 100%;">
+                  </div>
+                </div>
+                
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+            <div class="card-body" style="font-size: 18px;text-align: justify;"> 
+                 Afterwards many courses such as Advanced Radio Communications, Television, Wireless Communications etc. were started on certificate level & made a bechmark of quality students as output which were placed gladly by top companies and institutions around the globe. Currently on the requirement of changing time Institution offers Diploma Level courses on branches of Engineering and Design such as Bio-Medical, Computer, Instrumentation & Control, Electrical, Electronics & Communications and Computer Aided Costume Design. The institution is equipped with more than 100 Teaching & Administrative staff, 5 buildings, 3 hostels, staff quarters & 2 under construction buildings. The institute also offers a central library with vast range of books, magazines and articles. The inner soul of this place always keeps faculties and students self motivated towards new limits of work & innovation. AVPTI is not just an institution but a vast & evergrowing family of technocrats…
+            </div>
+        </div>
+        <div style=" flex: 25%;background-color: #f1f1f1;padding: 18px; border-left: 2px solid black;">
+          <h3 align="center">Announcements&nbsp;</h3>          
+          <div style="border-top: 2px solid black; margin-top: 15px;"></div>
+          
+            <div  class="scroll" style="margin-top: 25px;padding: 15px;">
+              {% for note in notes %}
+                <a href="#">{{note.subject}}&nbsp;<span class="blinking badge badge-pill badge-danger">new</span></a><br>
+                {{note.message}}
+                <div style="border: 1px solid rgb(146, 146, 146);"></div><br>
+              {% endfor %}
+            </div>
+          
+            <br><br>
+            <div style="background-color: rgb(243, 242, 242);color: black;padding: 20px;
+            padding-top: 10px; width:100%;border-top: 2px solid black;">
+              <h2 style="font-size: x-large;text-align: center;">Reach Us</h2>
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>
+                      <span class="fas fa-map-marked-alt" style="color: black ;font-size: 30px;"></span>
+                    </td>
+                    <td>
+                      Tagore Road,
+                      Opp. Hemu Gadhavi Hall, Rajkot - 360001
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="fas fa-phone" style="color: black ;font-size: 30px;"></span>
+                    </td>
+                    <td>0123456789</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="fas fa-envelope" style="color: black ;font-size: 30px;"></span>
+                    </td>
+                    <td>avpti1948@yahoo.com</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>  
+        </div>
+        
+    </body>
+{% endblock %}
