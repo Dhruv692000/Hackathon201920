@@ -1,0 +1,60 @@
+{% extends 'organization/organization_base.html' %}
+{% load static %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'organization/css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'organization/css/bootstrap.min.css' %}">
+	<title>Inventory</title>
+{% block leave %}
+<body>
+	<br>
+	<legend class="border-bottom mb-20" align="center">
+			<h2><i><b>Leave Management</b></i></h2>
+	</legend>
+	<table class="table table-hover">
+		<thead>
+			<tr align="center">
+				<th>Serial no</th>
+				<th>Student Id</th>
+				<th>Department</th>
+				<th>Name</th>
+				<th>Room no</th>
+				<th>Hostel</th>
+				<th>Reason</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in applications %}
+			<tr align="center">
+				<td>{{item.pk}}</td>
+				<td>{{item.er_no}}</td>				
+				<td>{{item.department}}</td>
+				<td>{{item.name}}</td>
+				<td>{{item.room_no}}</td>
+				<td>{{item.hostel}}</td>
+				<td>{{item.desc}}</td>
+				<td>
+					<a href="#" class="btn btn-info btn-sm" role="button">Accept</a>
+					<a href="{% url 'decline_request' item.pk %}" class="btn btn-danger btn-sm" role="button">Decline</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock leave %}

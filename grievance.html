@@ -1,0 +1,69 @@
+{% extends 'organization/base.html' %}
+{% block dashboard %}
+
+<body>
+	<div class="container" style="padding-top: 50px;">
+		<div class="card w-50 m-auto">
+			<div class="card-header">
+				<h2>Grievance</h2>
+			</div>
+			<div class="card-body">
+				<form class="form" method="POST">
+					{% csrf_token %}
+					<div class="form-group">
+						<label for="name">Full Name :</label>
+						<input type="text" class="form-control" name="name" placeholder="Enter Full Name" required>
+					</div>
+					<div class="form-group">
+						<label for="erno">Enrollment No. :</label>
+						<input type="number" class="form-control" name="erno" placeholder="Enter Enrollment Number" required>
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" class="form-control" name="semail" placeholder="Enter Email Here" required>
+					</div>
+					<div class="form-group">
+						<label for="department">Department :</label>
+						<select name="department" class="custom-select" required>
+							<option selected>Select Department</option>
+							<option value="ce">Computer Engineering</option>
+							<option value="it">Information Technology</option>
+							<option value="mech">Mechanical Engineering</option>
+							<option value="ec">Electronics & Communication</option>
+							<option value="ic">instrumentation & Control</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="type">Type of Grievance :</label>
+						<select name="type" class="custom-select" required>
+							<option selected>Type of Grievance</option>
+							<option value="addmission">Related to Addmission</option>
+							<option value="victimization">Related to Victimization</option>
+							<option value="payment">Related to Payment (Fees/Charges)</option>
+							<option value="harrassment">Harrassment by fellow Roomates/Staff</option>
+							<option value="amenities">Related to Amenities</option>
+							<option value="discrimination">Complaints of Discrimination on Categories</option>
+							<option value="schedule">Related to Hostel Schedule</option>
+							<option value="mess">Related to Mess</option>
+							<option value="maintenance">Related to Maintenance</option>
+							<option value="others">Others</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="others">Others :</label>
+						<input type="text" class="form-control" name="others" placeholder="Mention Other Grievance">
+					</div>
+					<div class="form-group">
+						<label for="info">Detailed Information :</label>
+						<textarea class="form-control" name="info" placeholder="Enter Details Here..."></textarea>
+					</div>
+					<div class="container" align="center" style="padding: 0px;">
+					    <button class="btn btn-outline-success" type="submit" name="submit" style="width: 100%;">Submit</button>
+				    </div>
+				</form>
+			</div>
+		</div>
+	</div><br><br>
+</body>
+
+{% endblock dashboard %}

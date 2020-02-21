@@ -1,0 +1,52 @@
+{% extends 'organization/organization_base.html' %}
+{% block content %}
+
+{% if messages %}
+	{% for message in messages %}
+		 <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+	{% endfor %}
+{% endif %}
+
+{% if error %}
+ 	<div class="alert alert-danger">
+ 		{{error}}
+ 	</div>
+{% endif %}
+
+<body style="background-color: #f1f1f1;"> 
+	<div class="container" style="margin: 70px auto;">
+		<div class="card" style="width: 50%; margin: auto; background-color: #ffffff">
+			<div class="card-header">
+				<h2 align="center">LOGIN</h2>
+			</div>
+
+			<div class="card-body">
+				<form class="form" method="POST">
+					{% csrf_token %}
+					<div class="form-group">
+						<label for="username">Email :</label>
+						<input type="email" class="form-control" name="email" placeholder="Enter Email" required>
+					</div>
+					<div class="form-group">
+						<label for="password">Password :</label>
+						<input type="password" class="form-control" name="password" placeholder="Enter Password" required>
+					</div>
+					<div class="form-group custom-control custom-checkbox">
+						<input type="checkbox" id="customCheck" class="custom-control-input" name="checkbox">
+						<label class="custom-control-label" for="customCheck">Keep me logged in</label>
+					</div>
+					<div class="container" align="center" style="padding: 0;">
+						<button class="btn btn-outline-success" style="width: 100%;">Login</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="card-footer" align="center"> 
+				<span>Not registered yet? <a href="{% url 'signup' %}">Register</a></span>
+			</div>
+		</div>
+	</div>
+</body>
+{% endblock %}

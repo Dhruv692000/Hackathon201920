@@ -1,0 +1,174 @@
+{% extends 'organization/base.html' %}
+{% block admission %}
+{% if error %}	
+	<div class="alert alert-danger ">
+		{{error}}
+	</div>	
+{% endif %}
+
+<body style="background-color: #f1f1f1;">
+	<div class="container" style="margin: 50px auto;">
+		<div class="card" style="width: 70%; margin: auto; background-color: #ffffff;">
+			<div class="card-header">
+				<h3 align="center">REGISTRATION FORM</h3>
+				<p style="text-align: center;" class="text-muted">
+					Please fill in this form to Register
+				</p>
+			</div>
+
+			<div class="card-body">
+				<form class="form" method="POST">
+					{% csrf_token %}
+					<div class="form-group">
+					    <label for="fname"><b>First Name</b></label>
+					    <input type="text" class="form-control" name="first_name" 
+					    placeholder="Enter First Name">
+					</div>
+					<div class="form-group">
+					    <label for="mname"><b>Middle Name</b> </label>
+					    <input type="text" class="form-control" name="middle_name" 
+					    placeholder="Enter Middle Name">
+					</div>
+					<div class="form-group">
+					    <label for="lname"><b>Last Name </b></label>
+					    <input type="text" class="form-control" name="last_name" 
+					    placeholder="Enter Last Name">
+					</div>
+					<div class="form-group">
+					    <label for="erno"><b>Merit Rank</b> </label>
+					    <input type="number" class="form-control" name="er_no" 
+					    placeholder="Enter Merit Number">
+					</div>
+					<div class="form-group">
+					    <label for="dob"><b>Date of Birth</b> </label>
+					    <input type="date" class="form-control" name="dob" 
+					    placeholder="DD/MM/YY">
+					</div>
+					<div class="form-group">
+						<label for="gender"><b>Gender </b></label><br>
+					    <div class="custom-control custom-radio custom-control-inline">
+						    <input type="radio" class="custom-control-input" id="customRadio" name="gender" value="male">
+						    <label class="custom-control-label" for="customRadio">Male</label>
+					    </div>
+					    <div class="custom-control custom-radio custom-control-inline">
+						    <input type="radio" class="custom-control-input" id="customRadio2" name="gender" value="female">
+						    <label class="custom-control-label" for="customRadio2">Female</label>
+					    </div>
+					    <div class="custom-control custom-radio custom-control-inline">
+						    <input type="radio" class="custom-control-input" id="customRadio3" name="gender" value="others">
+						    <label class="custom-control-label" for="customRadio3">Others</label>
+					    </div>
+					</div>
+					<div class="form-group">
+						<label for="department"><b>Department</b></label>
+						<select name="department" class="custom-select">
+							<option selected>Select Department</option>
+							<option value="ce">CE</option>
+							<option value="it">IT</option>
+							<option value="ec">MECH</option>
+							<option value="bm">EC</option>
+							<option value="civil">IC</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="semester"><b>Semester</b></label>
+						<select name="semester" class="custom-select">
+							<option selected>Select Semester</option>
+							<option value="1">1st</option>
+							<option value="2">2nd</option>
+							<option value="3">3rd</option>
+							<option value="4">4th</option>
+							<option value="5">5th</option>
+							<option value="6">6th</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="email"><b>Email</b></label>
+						<input type="email" class="form-control" name="email" 
+						placeholder="Enter Email">
+					</div>
+					<div class="form-group">
+						<label for="moblie"><b>Mobile Number</b></label>
+						<input type="tel" class="form-control" name="mobile" 
+						placeholder="Enter Mobile Number">
+					</div>
+					<div class="form-group">
+						<label for="email"><b>Password</b></label>
+						<input type="password" class="form-control" name="password" 
+						placeholder="Enter password">
+					</div>
+					<div class="form-group">
+						<label for="confirm_password"><b>Confirm Password</b></label>
+						<input type="password" class="form-control" name="confirm_password" placeholder="Re-enter your password">
+					</div>
+					<div class="form-group">
+						<label for="address"><b>Address</b></label>
+						<input type="textbox" class="form-control" name="address" 
+						placeholder="Enter Address">
+					</div>
+					<div class="form-group">
+						<label for="city"><b>City </b></label>
+						<input type="text" class="form-control" name="city" 
+						placeholder="Enter City">
+					</div>
+					<div class="form-group">
+						<label for="state"><b>State</b> </label>
+						<input type="text" class="form-control" name="state" 
+						placeholder="Enter State">
+					</div>
+					<div class="form-group">
+						<label for="zipcode"><b>Zip Code </b></label>
+						<input type="int" class="form-control" name="zipcode" 
+						placeholder="Enter Zip Code">
+					</div>
+					<div class="form-group">
+					    <label for="gname"><b>Guardian Name </b></label>
+					    <input type="text" class="form-control" name="guardian_name" placeholder="Enter Guardian Name">
+					</div>
+					<div class="form-group">
+					    <label for="gmobile"><b>Guardian Mobile No.</b> </label>
+					    <input type="int" class="form-control" name="guardian_mobile" placeholder="Enter Guardian Mobile Number">
+					</div>
+					<div class="form-group">
+					    <label for="ecno"><b>Emergency Contact No. </b></label>
+					    <input type="int" class="form-control" name="emergency_no" 
+					    placeholder="Enter Emergency Contact Number">
+					</div>
+					<div class="form-group custom-file">
+						<label class="custom-file-label" for="image-file">
+							<b>Choose Your Profile Image</b>
+						</label>
+						<input type="file" class="custom-file-input" name="profile">
+					</div>
+					<br>
+					<br>
+					<div class="form-group custom-control custom-checkbox">
+						<input type="checkbox" id="customCheck" class="custom-control-input" name="t&c">
+						<label class="custom-control-label" for="customCheck">I accept all 
+							<a href="#">Rules & Regulation</a>
+						</label>
+					</div>
+					<div class="container" align="center" style="margin-top: 20px; 
+						padding: 0px;">
+					    <button class="btn btn-outline-success" style="width: 100%;">
+					    	Submit
+					    </button>
+					</div>
+					<div class="container" align="center" style="margin-top: 20px; 
+						padding: 0px;">
+						<button class="btn btn-outline-info" style="width: 100%;" 
+						 onClick= "javascript:window.print()">Print
+						</button>						
+					</div>
+				</form> 
+			</div>
+			<div class="card-footer" align="center">
+				<span>Already Registered?&nbsp;
+					<a href="login.html">Login</a>
+				</span>
+			</div>
+		</div>
+	</div>
+</body>
+
+{% endblock admission%}
